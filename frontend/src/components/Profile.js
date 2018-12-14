@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
 import {getProfile} from '../services/auth'
 
  class ProfilePage extends Component {
@@ -24,6 +25,7 @@ import {getProfile} from '../services/auth'
       <div>
         {user.name}
         {user.email}
+        <Link to="/StarWars"><button>Api de StarWars</button></Link>
       </div>
     )
   }
