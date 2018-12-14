@@ -17,8 +17,8 @@ export const login = (user) =>{
 }
 
 //logout
-export const logout =(user) =>{
-    return axios.get(host+'/logout', user, {withCredentials:true})
+export const logout =() =>{
+    return axios.get(host+'/logout', {withCredentials:true})
     .then(r=>r.data)
     .catch(e=>e.response)
 
