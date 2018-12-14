@@ -8,10 +8,9 @@ import AuthPage from './components/auth/AuthPage';
 const Routes = () => (
   <Switch>
     <Route exact path="/" component={ Home }/>
-    <Route path="/auth/signup" component={AuthPage}/>
-    <Route path="/auth/login" component={AuthPage}/>
-    <Route path="/auth/logout" component={AuthPage}/>
-    <Route path="/profile" component={Profile}/>
+    <Route exact path="/auth/signup" component={AuthPage}/>
+    <Route exact path="/auth/login" component={AuthPage}/>
+    <Route exact path="/profile" component={Profile}/>
   </Switch>
 )
 
