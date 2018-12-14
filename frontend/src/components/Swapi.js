@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { getAll } from "../services/ApiStarWars"
 import { Link } from "react-router-dom";
+import Card from "./Card";
 
 class AllPeople extends Component {
   state = {
@@ -11,7 +12,8 @@ class AllPeople extends Component {
   componentWillMount = () => {
     getAll()
       .then(people => {
-        this.setState({ ...people.results });
+        this.setState({people:people.results});
+        console.log(people)
         console.log('dentro de willmount' + this.state)
       })
       .catch(err => console.log(err));
@@ -25,10 +27,10 @@ class AllPeople extends Component {
       <div>
         <p>dummy test</p>
 
-        {people.map(people => {
+        {people.map((p, key) => {
         return (
-          <section key={people.results.name} style={{ marginRight: "5vw" }}>
-            <h3>mapping</h3>
+          <section key={key} style={{ marginRight: "5vw" }}>
+            <Card {...p}/>
           </section>
         );
       })}
