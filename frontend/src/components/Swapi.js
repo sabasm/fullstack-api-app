@@ -11,14 +11,16 @@ class AllPeople extends Component {
   componentWillMount = () => {
     getAll()
       .then(people => {
-        this.setState({ ...people });
-        console.log(this.state.people)
+        this.setState({ ...people.results });
+        console.log('dentro de willmount' + this.state)
       })
       .catch(err => console.log(err));
   };
 
   render() {
     const { people } = this.state;
+    console.log('dentro de render' + people)
+    
     return (
       <div>
         <p>dummy test</p>
